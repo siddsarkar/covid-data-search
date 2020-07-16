@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="res/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/index.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19</title>
+  </head>
+
+  <body>
+    <div class="root container-md">
+      <div class="App">
+        <header class="h5 App-header card shadow border-0 rounded-0">
+          COVID-REPORT
+        </header>
+        <div class="App-main">
+          <div class="form-group w-75">
+            <input
+              type="text"
+              class="inputtext text-center form-control rounded-pill card shadow border-0"
+              name=""
+              id="searchfield"
+              aria-describedby="helpId"
+              placeholder="search for state"
+            />
+            <input
+              onclick="getresult()"
+              id="getit"
+              type="button"
+              class="text-center w-25 btn bg-dark text-light rounded-pill"
+              value="Submit"
+            />
+            <small id="helpId" class="form-text text-center text-muted"
+              >Made with <i class="fa fa-heart" aria-hidden="true"></i> by
+              Siddharth without <i class="fa fa-coffee" aria-hidden="true"></i
+            ></small>
+          </div>
+          <div class="container-fluid">
+            <div
+              class="preview container-fluid card m-0 p-0 shadow border-0 rounded-0"
+            >
+              <div class="row h-100 w-100">
+                <div class="col-md-4 d-flex flex-column">
+                  <div id="statename" class="mt-2 h5 card-title text-center">
+                    State
+                  </div>
+                  <div id="img" class="image-preview img-fluid w-100 h-50">
+                    <!-- <img src="" alt="image-preview" /> -->
+                  </div>
+                </div>
+                <div class="stats col-md-8">
+                  <div class="mt-2 h5 stat-item card-title text-center">
+                    Statistics
+                  </div>
+                  <div id="active" class="stat-item active">
+                    Active
+                    <span class="bg-warning" id="span-active"></span>
+                  </div>
+                  <div class="stat-item confirmed">
+                    Confirmed
+                    <span class="bg-warning" id="span-confirmed"></span>
+                  </div>
+                  <div class="stat-item death">
+                    Deaths
+                    <span class="bg-warning" id="span-deaths"></span>
+                  </div>
+                  <div class="stat-item recovered">
+                    Recovered
+                    <span class="bg-warning" id="span-recovered"></span>
+                  </div>
+                  <div class="note">
+                    Notes
+                    <q class="statenotes blockquote"
+                      ><span class="bg-warning" id="span-notes"></span
+                    ></q>
+                  </div>
+                  <small class="lastupdate">
+                    Updated To: <span id="lastUpdate"></span
+                  ></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="App-footer"></footer>
+      </div>
+    </div>
+    <script src="/js/countEffect.js"></script>
+    <script src="res/jquery/dist/jquery.slim.min.js"></script>
+    <script src="res/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
