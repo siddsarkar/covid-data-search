@@ -12,10 +12,6 @@ var deaths = document.getElementById("span-deaths");
 var recovered = document.getElementById("span-recovered");
 var notes = document.getElementById("span-notes");
 
-// const element = document.getElementById("root");
-// const button = document.getElementById("btn");
-// const search = document.getElementById("search");
-
 function getresult() {
   var query = search.value;
   searchState(query);
@@ -43,7 +39,6 @@ const searchState = async (searchText) => {
 
 const outputHtml = (matches) => {
   let result = matches[0];
-  console.log(result.active);
 
   state.innerHTML = `${result.state}`;
   updatedto.innerHTML = `${result.lastupdatedtime}`;
@@ -59,23 +54,25 @@ const outputHtml = (matches) => {
   animate("span-deaths", 0, deathCases, 1000);
   animate("span-recovered", 0, recoveredCases, 1000);
 };
-// // animate();
-// document.addEventListener(
-//   "DOMContentLoaded",
-//   async () => {
-//     const res = await fetch(URL);
-//     const data = await res.json();
 
-//     //all-list
-//     for (let i = 0; i < data.statewise.length; i++) {
-//       const html = `
-//       <h4>${data.statewise[i].state}</h4>
-//         <h4>${data.statewise[i].active}</h4>
-//         `;
-//       element.innerHTML += html;
-//     }
-
-//     console.log(data.statewise);
-//   },
-//   false
-// );
+function animate(id, start, end, duration) {
+  var obj = document.getElementById(id);
+  var range = end - start;
+  var minTimer = 50;
+  var stepTime = Math.abs(Math.floor(duration / range));
+  steptime = Math.max(stepTime, minTimer);
+  var startTime = new Date().getTime();
+  var endTime = startTime + duration;
+  var timer;
+  function run() {
+    var now = new Date().getTime();
+    var remaining = Math.max((endTime - now) / duration, 0);
+    var value = Math.round(end - remaining * range);
+    obj.innerHTML = value;
+    if (value == end) {
+      clearInterval(timer);
+    }
+  }
+  timer = setInterval(run, stepTime);
+  run();
+}

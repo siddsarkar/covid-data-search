@@ -2,94 +2,65 @@
 
 * {
   font-family: montserrat;
-  //   text-transform: uppercase;
   margin: 0;
   padding: 0;
+}
+
+.lastupdate {
+  position: absolute;
+  bottom: 0;
 }
 span {
   margin-left: 5px;
 }
 #img {
   background-image: url(https://picsum.photos/300);
-  background-size: contain;
+  background-size: cover;
 }
-.App {
+
+.app-wrapper {
+  width: 100vw;
+
   .App-header {
     @include center-center;
     text-align: center;
     background-color: pink;
     height: 2.2rem;
     font-weight: 600;
-    // font-size: 1.5rem;
-    // padding: 1.5rem;
   }
-  .App-main {
+
+  .input-wrapper {
+    width: 100%;
+    padding: 2rem;
+    height: 6.6rem;
     @include center-center;
     flex-direction: column;
-    height: calc(99vh - 2.2rem - 1.1rem);
-    // background-color: thistle;
-
     .inputtext {
       color: white;
       background-color: lightblue;
     }
+  }
+
+  .app-main-wrapper {
+    @include center-center;
+    margin-top: 10px;
+
     .preview {
       @include center-center;
-      height: 500px;
-      background-color: lightyellow;
-
+      background-color: thistle;
+      // background-color: lightyellow;
+      height: 34rem;
       .image-preview {
         background-color: white;
-        margin-top: 50px;
+        width: 100%;
+        height: 50%;
       }
     }
   }
   .App-footer {
-    // position: absolute;
-    // z-index: 9999;
-    // bottom: 0;
-    height: 1.1rem;
-    background-color: lightgreen;
+    height: 1.5rem;
+    margin-top: 8px;
+    position: relative;
+    bottom: 0;
   }
-}
-// .stats {
-//   .confirmed:after {
-//     @include center-center;
-//     transform: translate(110px, -18px);
-//     content: "";
-//     position: absolute;
-//     height: 10px;
-//     width: 100px;
-//     background-color: red;
-//   }
-//   .death:after {
-//     @include center-center;
-//     transform: translate(110px, -18px);
-//     content: "";
-//     position: absolute;
-//     height: 10px;
-//     width: 200px;
-//     background-color: blue;
-//   }
-//   .recovered:after {
-//     @include center-center;
-//     transform: translate(110px, -18px);
-//     content: "";
-//     position: absolute;
-//     height: 10px;
-//     width: 100px;
-//     background-color: red;
-//   }
-//   .statenotes {
-//     @include center-center;
-//     transform: translate(110px, -18px);
-//     position: absolute;
-//     height: 50px;
-//     width: 200px;
-//     background-color: gray;
-//   }
-// }
-.lastupdate {
-  position: absolute;
-  bottom: 0;
 }
